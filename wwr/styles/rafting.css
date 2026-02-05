@@ -1,13 +1,11 @@
 :root {
-  --primary-color: #4b3f72;
-  --accent1-color: #6c5ce7;
   --accent2-color: #dcd6f7;
   --heading-font: Arial, sans-serif;
   --body-font: Verdana, sans-serif;
 }
 
 /* Reset */
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -41,7 +39,7 @@ header nav {
 }
 
 header nav a {
-  color: #1a73e8;
+  color: #0d47a1; /* bleu plus foncé pour contraste AA */
   text-decoration: none;
   margin: 4px 0;
 }
