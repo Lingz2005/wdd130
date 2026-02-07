@@ -1,113 +1,162 @@
-:root {
-  --accent2-color: #dcd6f7;
-  --heading-font: Arial, sans-serif;
-  --body-font: Verdana, sans-serif;
-}
-
-/* Reset */
-*, *::before, *::after {
+/* ===============================
+   Global Reset
+================================ */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Global */
 body {
-  font-family: var(--body-font);
-  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #222;
 }
 
-header, main, footer {
-  width: 840px;
-  margin: 0 auto;
-}
-
-/* HEADER (matches wireframe) */
+/* ===============================
+   Header (CSS Grid)
+================================ */
 header {
-  background-color: var(--accent2-color);
-  padding: 16px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0a4d68;
 }
 
 header img {
-  width: 100px;
-  margin-bottom: 12px;
+  width: 120px;
 }
 
+/* ===============================
+   Navigation (Flexbox)
+================================ */
 header nav {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
 
 header nav a {
-  color: #0d47a1; /* bleu plus foncé pour contraste AA */
+  color: #ffffff;
   text-decoration: none;
-  margin: 4px 0;
+  font-weight: bold;
 }
 
-/* HERO */
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   Hero Section (GRID – FIXED)
+================================ */
 .hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
   position: relative;
-  margin-top: 16px;
 }
 
-.hero img {
+/* Hero image */
+.hero > img {
   width: 100%;
-  display: block;
+  height: 380px;
+  object-fit: cover;
 }
 
+/* Hero title */
 .hero h1 {
   position: absolute;
-  top: 16px;
-  width: 100%;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 1rem 2rem;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 12px;
-  font-family: var(--heading-font);
 }
 
-/* HERO ARTICLE OVERLAY */
+/* Mission article */
 .hero article {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 16px;
-}
-
-.hero article img {
-  float: right;
-  width: 120px;
-  margin-left: 12px;
-}
-
-/* SECTIONS */
-section {
-  margin: 24px 0;
-  padding: 16px;
-  border: 1px solid #ccc;
-}
-
-h2 {
-  font-family: var(--heading-font);
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-/* FOOTER */
-footer {
-  background-color: var(--accent2-color);
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
+  background-color: #ffffff;
+  max-width: 700px;
+  margin: -3rem auto 2rem auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
   align-items: center;
 }
 
-.socialmedia a {
-  text-decoration: none;
+.hero article img {
+  width: 110px;
+}
+
+/* ===============================
+   History Section
+================================ */
+.history {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.history h2 {
+  color: #0a4d68;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   Adventure Section (GRID – PERFECT)
+================================ */
+.adventure {
+  padding: 3rem 2rem;
+  background-color: #088395;
+  color: #ffffff;
+  text-align: center;
+}
+
+.adventure-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.adventure figure {
+  width: 100%;
+}
+
+.adventure img {
+  width: 100%;
+  height: 120px;
+  /* 🔹 smaller images */
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.adventure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* ===============================
+   Footer
+================================ */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0a4d68;
+  color: #ffffff;
+}
+
+.socialmedia {
+  display: flex;
+  gap: 1rem;
 }
 
 .socialmedia img {
   width: 28px;
-  margin-left: 8px;
 }
