@@ -1,6 +1,6 @@
 /* ===============================
-   Global Reset
-================================ */
+   GLOBAL RESET
+================================= */
 * {
   margin: 0;
   padding: 0;
@@ -10,153 +10,231 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: #222;
+  background-color: #f4f8fb;
+  color: #1a1a1a;
+  /* Strong contrast */
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 /* ===============================
-   Header (CSS Grid)
-================================ */
+   HEADER (Uniform Site Design)
+================================= */
 header {
-  display: grid;
-  grid-template-columns: 150px 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  background-color: #0a2f44;
+  /* Dark blue for AA contrast */
   padding: 1rem 2rem;
-  background-color: #0a4d68;
 }
 
 header img {
   width: 120px;
 }
 
-/* ===============================
-   Navigation (Flexbox)
-================================ */
-header nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1.5rem;
-}
-
-header nav a {
+nav a {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
+  margin-left: 1.5rem;
+  font-size: 1rem;
 }
 
-header nav a:hover {
+nav a:hover {
   text-decoration: underline;
 }
 
 /* ===============================
-   Hero Section (GRID – FIXED)
-================================ */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  position: relative;
-}
-
-/* Hero image */
-.hero > img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-}
-
-/* Hero title */
-.hero h1 {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 1rem 2rem;
+   COMPANY INFO
+================================= */
+.company-info {
   text-align: center;
+  padding: 2.5rem 1rem;
+  background-color: #e6f2f8;
 }
 
-/* Mission article */
-.hero article {
-  background-color: #ffffff;
-  max-width: 700px;
-  margin: -3rem auto 2rem auto;
-  padding: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1rem;
-  align-items: center;
-}
-
-.hero article img {
-  width: 110px;
-}
-
-/* ===============================
-   History Section
-================================ */
-.history {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.history h2 {
-  color: #0a4d68;
+.company-info h1 {
+  font-size: 2rem;
   margin-bottom: 1rem;
+  color: #0a2f44;
 }
 
 /* ===============================
-   Adventure Section (GRID – PERFECT)
-================================ */
-.adventure {
-  padding: 3rem 2rem;
-  background-color: #088395;
-  color: #ffffff;
-  text-align: center;
-}
-
-.adventure-grid {
+   CONTACT GRID (Wireframe Layout)
+================================= */
+.contact-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-.adventure figure {
+/* MAP */
+.map iframe {
   width: 100%;
+  height: 350px;
+  border: none;
+  border-radius: 8px;
 }
 
-.adventure img {
-  width: 100%;
-  height: 120px;
-  /* 🔹 smaller images */
-  object-fit: cover;
-  border-radius: 4px;
+/* ===============================
+   CONTACT FORM
+================================= */
+.contact-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
 }
 
-.adventure figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+.contact-form label {
+  display: block;
+  margin-bottom: 1rem;
   font-weight: bold;
 }
 
-/* ===============================
-   Footer
-================================ */
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #0a4d68;
-  color: #ffffff;
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-.socialmedia {
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+fieldset {
+  border: 1px solid #999;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
+fieldset label {
+  display: block;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  font-weight: normal;
+}
+
+.checkbox input {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+/* Submit Button */
+button {
+  background-color: #0a2f44;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #145374;
+}
+
+/* ===============================
+   EMPLOYEE SECTION
+================================= */
+.employees {
+  background-color: #e6f2f8;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.employees h2 {
+  margin-bottom: 2rem;
+  color: #0a2f44;
+}
+
+.employee-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.employee-cards figure {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  width: 250px;
+}
+
+.employee-cards img {
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+figcaption {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   FOOTER (Uniform Design)
+================================= */
+footer {
+  background-color: #0a2f44;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+footer p {
+  margin-bottom: 1rem;
+}
+
+.socialmedia a {
+  margin: 0 0.5rem;
 }
 
 .socialmedia img {
   width: 28px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    margin: 0 0.75rem;
+  }
 }
